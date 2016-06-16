@@ -20,17 +20,7 @@ namespace Calculator
         {
             InitializeComponent();
         }
-        /*
-        private void Number(object sender, EventArgs e)
-        {
-            if((resultTextBox.Text == "0") || (isOpertionPerformed))
-               resultTextBox.Clear();
 
-            isOpertionPerformed = false;
-            Button button = (Button)sender;
-            resultTextBox.Text = resultTextBox.Text + button.Text;
-        }
-        */
         private void Number(object sender, EventArgs e)
         {
             if ((resultTextBox.Text == "0") || (isOpertionPerformed))
