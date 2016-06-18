@@ -41,16 +41,15 @@ namespace Calculator
         private void operator_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            //Hmm, funkar inte
-            /*
+            
             if(result != 0)
             {
-                EqualButton.PreformClick();
-                    opertor = button.Text
+                    this.EqualButton.PerformClick();
+                    opertor = button.Text;
                     currentOperationLable.Text = result + " " + opertor;
                     isOpertionPerformed = true;
             }
-            */
+            
             opertor = button.Text;
             result = Double.Parse(resultTextBox.Text);
             currentOperationLable.Text = result + " " + opertor;
@@ -88,7 +87,7 @@ namespace Calculator
                     resultTextBox.Text = (result / Double.Parse(resultTextBox.Text)).ToString();
                     break;
                 case "√":
-                    resultTextBox.Text = (Math.Sqrt(result)).ToString(); ;
+                    resultTextBox.Text = (Math.Sqrt(result)).ToString();
                     break;
                 default:
                     break;
