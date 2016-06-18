@@ -72,28 +72,35 @@ namespace Calculator
 
         private void Equal_Click(object sender, EventArgs e)
         {
-            switch (opertor)
+            try
             {
-                case "+":
-                    resultTextBox.Text = (result + Double.Parse(resultTextBox.Text)).ToString();
-                    break;
-                case "-":
-                    resultTextBox.Text = (result - Double.Parse(resultTextBox.Text)).ToString();
-                    break;
-                case "x":
-                    resultTextBox.Text = (result * Double.Parse(resultTextBox.Text)).ToString();
-                    break;
-                case "/":
-                    resultTextBox.Text = (result / Double.Parse(resultTextBox.Text)).ToString();
-                    break;
-                case "√":
-                    resultTextBox.Text = (Math.Sqrt(result)).ToString();
-                    break;
-                default:
-                    break;
+                switch (opertor)
+                {
+                    case "+":
+                        resultTextBox.Text = (result + Double.Parse(resultTextBox.Text)).ToString();
+                        break;
+                    case "-":
+                        resultTextBox.Text = (result - Double.Parse(resultTextBox.Text)).ToString();
+                        break;
+                    case "x":
+                        resultTextBox.Text = (result * Double.Parse(resultTextBox.Text)).ToString();
+                        break;
+                    case "/":
+                        resultTextBox.Text = (result / Double.Parse(resultTextBox.Text)).ToString();
+                        break;
+                    case "√":
+                        resultTextBox.Text = (Math.Sqrt(result)).ToString();
+                        break;
+                    default:
+                        break;
+                }
+                result = Double.Parse(resultTextBox.Text);
+                currentOperationLable.Text = "";
+
+            }catch(Exception msg)
+            {
+                Console.WriteLine(msg);
             }
-            result = Double.Parse(resultTextBox.Text);
-            currentOperationLable.Text = "";
         }
     }
 }
